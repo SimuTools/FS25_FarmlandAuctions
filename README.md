@@ -1,110 +1,110 @@
 # Farmland Auctions
 
-**Farmland Auctions** fügt dem Landwirtschafts-Simulator 25 regelmäßige Feldversteigerungen hinzu.
+**Farmland Auctions** adds regular farmland auctions to Farming Simulator 25.
 
-Statt Flächen einfach direkt zu kaufen, können Felder über ein Auktionssystem ersteigert werden. Spieler können direkt auf dem versteigerten Feld mitbieten und sich so Land auf eine spannendere und dynamischere Weise sichern.
+Instead of simply buying land directly, fields can be purchased through an auction system. Players can place bids directly on the auctioned farmland, creating a more dynamic and competitive way to buy land.
 
 ## Features
 
-- Regelmäßige automatische Feldversteigerungen
-- Direktes Bieten auf dem Feld über die **B-Taste**
-- Jedes neue Gebot erhöht den aktuellen Auktionspreis
-- Alternative Möglichkeit zum klassischen Landkauf
-- Optionale NPC-Gebote
-- Optionaler „Auktion Only“-Modus
-- Sperren des normalen Standardkaufs, wenn Flächen nur per Auktion kaufbar sein sollen
-- Multiplayer-Unterstützung
-- Höfe können im Multiplayer gegeneinander bieten
-- Konsolenbefehle zur Verwaltung von Auktionen
+- Regular automatic farmland auctions
+- Place bids directly on the field using the **B key**
+- Each new bid increases the current auction price
+- Alternative land purchase system
+- Optional NPC bidding
+- Optional “Auction Only” mode
+- Blocks the default land purchase option when auction-only mode is enabled
+- Multiplayer support
+- Farms can bid against each other in multiplayer
+- Console commands for auction management
 
-## Funktionsweise
+## How It Works
 
-Sobald eine Auktion aktiv ist, kann auf der betroffenen Fläche direkt geboten werden.
+When an auction is active, players can bid directly on the affected farmland.
 
-Dazu muss sich der Spieler auf der versteigerten Fläche befinden und die **B-Taste** drücken.  
-Das aktuelle Gebot wird dadurch erhöht.
+To place a bid, the player must be standing on the auctioned farmland and press the **B key**.  
+This increases the current bid.
 
-Im Multiplayer können verschiedene Höfe gegeneinander bieten. Der Hof mit dem höchsten Gebot gewinnt nach Ablauf der Auktion die Fläche.
+In multiplayer, different farms can bid against each other. Once the auction ends, the farm with the highest bid wins the farmland.
 
-## Mod-Einstellungen
+## Mod Settings
 
-Über die Mod-Einstellungen können verschiedene Optionen angepasst werden:
+The mod settings allow you to adjust several options:
 
-- NPC-Gebote aktivieren oder deaktivieren
-- Festlegen, ob Flächen nur noch per Auktion gekauft werden können
-- Normalen Standardkauf sperren, wenn der Auktion-Only-Modus aktiv ist
+- Enable or disable NPC bids
+- Decide whether farmland can only be purchased through auctions
+- Disable the default land purchase option when auction-only mode is active
 
-## Konsolenbefehle
+## Console Commands
 
-Folgende Konsolenbefehle sind verfügbar:
+The following console commands are available:
 
 ```txt
 faStartNow
 ```
 
-Startet die nächste Auktion sofort.
+Starts the next auction immediately.
 
 ```txt
 faStartAuction <farmlandId>
 ```
 
-Startet manuell eine Auktion für eine bestimmte Fläche.
+Manually starts an auction for a specific farmland.
 
 ```txt
 faEndNow
 ```
 
-Beendet die aktuell laufende Auktion sofort.
+Immediately ends the currently active auction.
 
 ```txt
 faCancelAuction
 ```
 
-Bricht die aktuelle oder geplante Auktion ab.
+Cancels the current or scheduled auction.
 
 ```txt
 faSetAuctionTime <min> <max>
 ```
 
-Legt die minimale und maximale Auktionsdauer fest.
+Sets the minimum and maximum auction duration.
 
 ```txt
 faSetStartInterval <min> <max>
 ```
 
-Legt fest, nach welcher minimalen und maximalen Zeit die nächste Auktion startet.
+Sets the minimum and maximum time before the next auction starts.
 
 ## Multiplayer
 
-Die Mod ist für den Multiplayer geeignet.
+This mod is designed to work in multiplayer.
 
-Im Multiplayer können mehrere Höfe auf dieselbe Fläche bieten. Dadurch entsteht ein direkter Wettbewerb um Land und der Feldkauf wird deutlich interessanter als beim normalen Sofortkauf.
+In multiplayer, multiple farms can bid on the same farmland. This creates direct competition between farms and makes land purchases more interesting than the default instant-buy system.
 
-## Auktion Only
+## Auction Only
 
-Wenn der Auktion-Only-Modus aktiviert ist, können Flächen nicht mehr normal gekauft werden.
+When auction-only mode is enabled, farmland can no longer be bought normally.
 
-Der Standardkauf wird gesperrt und Land kann ausschließlich über Auktionen erworben werden.
+The default purchase option is blocked, and land can only be acquired through auctions.
 
 ## Changelog
 
 ### Version 1.0.0.1
 
-- Multiplayer-Probleme behoben
-- Zeitproblem behoben
+- Fixed multiplayer issues
+- Fixed timing issue
 
 ### Version 1.0.0.0
 
-- Erste Version der Mod
-- Regelmäßige Feldversteigerungen hinzugefügt
-- Bieten direkt auf dem Feld über die B-Taste
-- NPC-Gebote hinzugefügt
-- Auktion-Only-Modus hinzugefügt
-- Konsolenbefehle zur Auktionsverwaltung hinzugefügt
-- Multiplayer-Unterstützung hinzugefügt
+- Initial release
+- Added regular farmland auctions
+- Added direct field bidding using the B key
+- Added NPC bidding
+- Added auction-only mode
+- Added console commands for auction management
+- Added multiplayer support
 
-## Hinweise
+## Notes
 
-Diese Mod verändert das Kaufsystem für Farmlands und ist besonders für Server geeignet, die ein realistischeres und langfristigeres Wirtschaftssystem nutzen möchten.
+This mod changes the farmland purchase system and is especially useful for servers that want a more realistic and long-term economy.
 
-Für ein faires Spielerlebnis im Multiplayer sollten die Einstellungen vor Serverstart passend festgelegt werden.
+For a fair multiplayer experience, the auction settings should be configured before starting a server.
