@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<auctionNpcProfiles>
+<settings
+    minBidders="2"
+    maxBidders="6"
+    npcWinPlayerLeadMultiplier="1.00"
+    npcWinLateMultiplier="1.00"
+    npcWinChanceAgainstPlayer="0.40"
+    npcCounterChance="0.10"
+    npcImmediateCounterMinHours="0.001"
+    npcImmediateCounterMaxHours="0.008"
+    npcPlannedReactionMinHours="0.08"
+    npcPlannedReactionMaxHours="1.20"
+    npcLateWinBlockHours="8.0"
+    softCloseEnabled="true"
+    softCloseTriggerHours="0.08"
+    softCloseExtendHours="0.20"
+    softCloseMaxExtensions="2"
+    globalNpcGapMinHours="0.10"
+    globalNpcGapMaxHours="0.90"
+    auctionDiscountMinPct="0.15"
+    auctionDiscountMaxPct="0.55" />
+
+    <npcNames>
+        <name value="Werner Regermann" />
+        <name value="Bauer Hagemann" />
+        <name value="Lohnbetrieb Krüger" />
+        <name value="Nico Bohne" />
+		<name value="Janni Sosmann" />
+		<name value="Timo Hansen" />
+        <name value="Lohnbetrieb Uelzen" />
+        <name value="Agrar Nordmann" />
+        <name value="Bergmann Landwirtschaft" />
+        <name value="Bauer Iwan" />
+        <name value="Hof Brackede" />
+        <name value="Gut Hohenried" />
+    </npcNames>
+
+    <auctionHouses>
+        <de>
+            <house name="Nordland Auktionen" />
+            <house name="Heide Auktionshaus" />
+            <house name="Land &amp; Feld Auktionen" />
+            <house name="Agrar Auktionen Bevensen" />
+            <house name="Auktionshaus am Markt" />
+            <house name="Hofgut Auktionen" />
+        </de>
+        <en>
+            <house name="Northern Fields Auctions" />
+            <house name="Green Valley Auction House" />
+            <house name="Country Land Exchange" />
+            <house name="Harvest Hill Auctions" />
+            <house name="Rural Estate Auctions" />
+            <house name="Meadowbrook Auction House" />
+        </en>
+    </auctionHouses>
+</auctionNpcProfiles>

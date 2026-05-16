@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<GUI onOpen="onOpen" onClose="onClose" onCreate="onCreate">
+    <GuiElement profile="newLayer"/>
+    <Bitmap profile="dialogFullscreenBg" id="dialogBg"/>
+
+    <GuiElement profile="fs25_productionStorageDialogBg_fa" id="dialogElement">
+        <ThreePartBitmap profile="fs25_dialogBgMiddleSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgTopSmall"/>
+        <ThreePartBitmap profile="fs25_dialogBgBottom"/>
+
+        <GuiElement profile="fs25_dialogContentContainer">
+            <Text profile="fs25_dialogTitle" id="dialogTitleElement" text="Auction" position="0px -35px"/>
+
+            <GuiElement profile="fs25_dialogSettingsBoxContainer_fa">
+
+                <Bitmap profile="fs25_previewBox_fa">
+                    <Text profile="fs25_previewLabel_fa_row1" text="$l10n_fa_standard_price"/>
+                    <Text profile="fs25_previewValue_fa_row1" id="standardPriceValueText" text="-"/>
+
+                    <Text profile="fs25_previewLabel_fa_row2" text="$l10n_fa_start_price"/>
+                    <Text profile="fs25_previewValue_fa_row2" id="startPriceValueText" text="-"/>
+
+                    <Text profile="fs25_previewLabel_fa_row3" text="$l10n_fa_highest_bidder"/>
+                    <Text profile="fs25_previewValue_fa_row3" id="highestValueText" text="-"/>
+
+                    <Text profile="fs25_previewLabel_fa_row4" text="$l10n_fa_current_bid"/>
+                    <Text profile="fs25_previewValue_fa_row4" id="currentValueText" text="-"/>
+
+                    <Text profile="fs25_previewLabel_fa_row5" text="$l10n_fa_bid_increase"/>
+                    <Text profile="fs25_previewValue_fa_row5" id="raiseValueText" text="-"/>
+
+                    <Text profile="fs25_previewLabel_fa_row6" text="$l10n_fa_new_bid"/>
+                    <Text profile="fs25_previewValue_fa_row6" id="newBidValueText" text="-"/>
+
+                    <Text profile="fs25_previewLabel_fa_row7" text="$l10n_fa_ends_in"/>
+                    <Text profile="fs25_previewValue_fa_row7" id="endsValueText" text="-"/>
+                </Bitmap>
+
+                <Bitmap profile="fs25_sliderRow_fa">
+                    <Text profile="fs25_sliderLabel_fa" text="$l10n_ui_bid"/>
+
+                    <OptionSlider
+                        profile="fs25_bidStepsSlider_fa"
+                        id="bidStepsSlider"
+                        focusInit="onOpen"
+                        onClickCallback="onBidStepsSliderChanged"/>
+                </Bitmap>
+
+            </GuiElement>
+        </GuiElement>
+
+        <BoxLayout profile="fs25_dialogButtonBox" id="buttonsPC">
+            <Button profile="buttonOK" text="$l10n_button_ok" onClick="onClickOk" onClickCallback="onClickOk" id="yesButton"/>
+            <Bitmap profile="fs25_dialogButtonBoxSeparator"/>
+            <Button profile="buttonBack" text="$l10n_button_back" onClick="onClickBack" onClickCallback="onClickBack" id="noButton"/>
+        </BoxLayout>
+    </GuiElement>
+
+    <GUIProfiles>
+        <Profile name="fs25_productionStorageDialogBg_fa" extends="fs25_dialogBg">
+            <size value="760px 560px"/>
+        </Profile>
+
+        <Profile name="fs25_dialogSettingsBoxContainer_fa" extends="emptyPanel" with="anchorTopCenter">
+            <position value="0px -405px"/>
+            <size value="680px 410px"/>
+        </Profile>
+
+        <Profile name="fs25_sliderRow_fa" extends="baseReference" with="anchorTopCenter">
+            <position value="0px 34px"/>
+            <size value="500px 56px"/>
+            <imageColor value="$preset_colorTransparent"/>
+        </Profile>
+
+        <Profile name="fs25_sliderLabel_fa" extends="fs25_textDefault" with="anchorTopLeft">
+            <position value="0px 14px"/>
+            <size value="120px 24px"/>
+            <textSize value="18px"/>
+            <textBold value="true"/>
+            <textAlignment value="left"/>
+            <textColor value="1 1 1 1"/>
+        </Profile>
+
+        <Profile name="fs25_bidStepsSlider_fa" extends="fs25_textSizeOptionSlider" with="anchorTopLeft">
+            <position value="120px 0px"/>
+            <width value="380px"/>
+            <updateTextPosition value="false"/>
+            <hideLeftRightButtons value="true"/>
+            <defaultProfileText value="fs25_optionSliderTextHidden_fa"/>
+        </Profile>
+
+        <Profile name="fs25_optionSliderTextHidden_fa" extends="fs25_optionSliderText">
+            <position value="0px 0px"/>
+            <size value="1px 1px"/>
+            <textSize value="1px"/>
+            <textColor value="1 1 1 0"/>
+        </Profile>
+
+        <Profile name="fs25_previewBox_fa" extends="baseReference" with="anchorTopCenter">
+            <position value="0px 112px"/>
+            <size value="420px 242px"/>
+            <imageColor value="$preset_colorTransparent"/>
+        </Profile>
+
+        <Profile name="fs25_previewLabelBase_fa" extends="fs25_textDefault" with="anchorTopLeft">
+            <size value="220px 24px"/>
+            <textSize value="18px"/>
+            <textBold value="true"/>
+            <textAlignment value="left"/>
+            <textColor value="1 1 1 0.82"/>
+        </Profile>
+
+        <Profile name="fs25_previewValueBase_fa" extends="fs25_textDefault" with="anchorTopLeft">
+            <size value="180px 24px"/>
+            <textSize value="18px"/>
+            <textBold value="true"/>
+            <textAlignment value="right"/>
+            <textColor value="1 1 1 1"/>
+        </Profile>
+
+        <Profile name="fs25_previewLabel_fa_row1" extends="fs25_previewLabelBase_fa">
+            <position value="0px 0px"/>
+        </Profile>
+        <Profile name="fs25_previewValue_fa_row1" extends="fs25_previewValueBase_fa">
+            <position value="240px 0px"/>
+        </Profile>
+
+        <Profile name="fs25_previewLabel_fa_row2" extends="fs25_previewLabelBase_fa">
+            <position value="0px 32px"/>
+        </Profile>
+        <Profile name="fs25_previewValue_fa_row2" extends="fs25_previewValueBase_fa">
+            <position value="240px 32px"/>
+        </Profile>
+
+        <Profile name="fs25_previewLabel_fa_row3" extends="fs25_previewLabelBase_fa">
+            <position value="0px 64px"/>
+        </Profile>
+        <Profile name="fs25_previewValue_fa_row3" extends="fs25_previewValueBase_fa">
+            <position value="240px 64px"/>
+        </Profile>
+
+        <Profile name="fs25_previewLabel_fa_row4" extends="fs25_previewLabelBase_fa">
+            <position value="0px 96px"/>
+        </Profile>
+        <Profile name="fs25_previewValue_fa_row4" extends="fs25_previewValueBase_fa">
+            <position value="240px 96px"/>
+        </Profile>
+
+        <Profile name="fs25_previewLabel_fa_row5" extends="fs25_previewLabelBase_fa">
+            <position value="0px 128px"/>
+        </Profile>
+        <Profile name="fs25_previewValue_fa_row5" extends="fs25_previewValueBase_fa">
+            <position value="240px 128px"/>
+        </Profile>
+
+        <Profile name="fs25_previewLabel_fa_row6" extends="fs25_previewLabelBase_fa">
+            <position value="0px 160px"/>
+        </Profile>
+        <Profile name="fs25_previewValue_fa_row6" extends="fs25_previewValueBase_fa">
+            <position value="240px 160px"/>
+        </Profile>
+        <Profile name="fs25_previewLabel_fa_row7" extends="fs25_previewLabelBase_fa">
+            <position value="0px 192px"/>
+        </Profile>
+        <Profile name="fs25_previewValue_fa_row7" extends="fs25_previewValueBase_fa">
+            <position value="240px 192px"/>
+        </Profile>
+
+        <Profile name="fs25_textSizeOptionSlider" extends="fs25_multiTextOption" with="anchorMiddleLeft">
+            <width value="350px"/>
+            <position value="230px 0px"/>
+            <sliderOffset value="5px"/>
+            <useFillingBar value="true"/>
+            <updateTextPosition value="false"/>
+            <hideLeftRightButtons value="true"/>
+            <defaultProfileBgThreePart value="fs25_optionSliderBg"/>
+            <defaultProfileText value=""/>
+            <defaultProfileSlider value="fs25_optionSliderIcon"/>
+            <defaultProfileFillingBarThreePart value="fs25_optionSliderFillingBar"/>
+        </Profile>
+    </GUIProfiles>
+</GUI>
