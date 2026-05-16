@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="108">
+    <author>SimuTools</author>
+    <version>1.0.0.4</version>
+
+    <title>
+        <en>Farmland Auctions</en>
+        <de>Feldversteigerungen</de>
+    </title>
+
+<description>
+    <en><![CDATA[This mod adds regular farmland auctions.
+
+On auctioned land, bids can be placed directly on the field using the B key. Each new bid increases the current auction price and offers an alternative way to purchase land.
+
+Depending on the mod settings, NPC bidders can be enabled or disabled. It is also possible to restrict farmland purchases so that land can only be bought through auctions while a standard purchase is blocked.
+
+In multiplayer, farms can bid against each other.
+
+Available console commands:
+- faStartNow -> starts the next auction immediately
+- faStartAuction <farmlandId> -> starts an auction manually for a specific farmland
+- faEndNow -> ends the current auction immediately
+- faCancelAuction -> cancels the current or scheduled auction
+- faSetAuctionTime <minHours> <maxHours> -> sets the minimum and maximum auction duration
+- faSetStartInterval <minHours> <maxHours> sets the minimum and maximum times for when the next auction starts
+
+--Changes 1.0.0.4--
+- Fixed MP auction-only sync for admin clients
+- Fixed map buy button staying visible after faSetAuctionOnly true
+- Fixed auction-only state not syncing to MP late joiners
+- Hide standard buy button completely while auction-only mode is active
+
+--Changes 1.0.0.1--
+- Fixed multiplayer issues
+- Fixed timing issue
+]]></en>
+
+    <de><![CDATA[Diese Mod fügt regelmäßige Feldversteigerungen hinzu.
+
+Auf versteigerten Flächen kann direkt auf dem Feld über die B-Taste geboten werden. Jedes neue Gebot erhöht den aktuellen Auktionspreis und bietet eine alternative Möglichkeit, Land zu kaufen.
+
+Über die Mod-Einstellungen können NPC-Gebote aktiviert oder deaktiviert werden. Außerdem kann festgelegt werden, dass Flächen nur noch per Auktion kaufbar sind und der normale Standardkauf währenddessen gesperrt wird.
+
+Im Multiplayer können Höfe gegeneinander bieten.
+
+Verfügbare Konsolenbefehle:
+- faStartNow -> startet die nächste Auktion sofort
+- faStartAuction <farmlandId> -> startet manuell eine Auktion für eine bestimmte Fläche
+- faEndNow -> beendet die aktuelle Auktion sofort
+- faCancelAuction -> bricht die aktuelle oder geplante Auktion ab
+- faSetAuctionTime <minStunden> <maxStunden> -> legt die minimale und maximale Auktionsdauer fest
+- faSetStartInterval <minStunden> <maxStunden> -> legt die minimale und maximale Zeit fest wann die Nächste Auktion startet
+
+--Änderungen 1.0.0.4--
+- MP-Sync für Auction-Only bei Admin-Clients behoben
+- Kaufen-Button bleibt nach faSetAuctionOnly true nicht mehr sichtbar
+- Auction-Only Status wird jetzt auch an nachträglich beitretende MP-Clients synchronisiert
+- Standard-Kaufen-Button wird im Auktionsmodus komplett ausgeblendet
+
+--Änderungen 1.0.0.1--
+- Multiplayer Probleme behoben
+- Zeit Problem behoben
+]]></de>
+</description>
+
+    <multiplayer supported="true" />
+
+    <iconFilename>icon_FarmlandAuctions.dds</iconFilename>
+
+    <actions>
+        <action name="FARMLAND_AUCTION_BID" category="PLAYER" />
+    </actions>
+	
+    <inputBinding>
+        <actionBinding action="FARMLAND_AUCTION_BID">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_b" />
+        </actionBinding>
+        <actionBinding action="FARMLAND_AUCTION_BID">
+            <binding device="GAMEPAD" input="BUTTON_X" />
+        </actionBinding>
+    </inputBinding>
+
+    <l10n>
+        <text name="input_FARMLAND_AUCTION_BID">
+            <de>Auktion: Bieten</de>
+            <en>Auction: Bid</en>
+        </text>
+
+        <text name="HighestBidder">
+            <de> ist Höchstbietender mit </de>
+            <en> is highest bidder with </en>
+        </text>
+
+        <text name="NotEnoughMoney">
+            <de>Die Farm hat nicht genügend Geld, um zu bieten.</de>
+            <en>Not enough money to bid.</en>
+        </text>
+
+        <text name="Farm">
+            <de>Hof </de>
+            <en>Farm </en>
+        </text>
+
+        <text name="Sold">
+            <de>Das Land wurde verkauft: </de>
+            <en>Land sold: </en>
+        </text>
+
+        <text name="EndInOneHour">
+            <de>Die Auktion endet in einer Stunde!</de>
+            <en>The auction ends in one hour!</en>
+        </text>
+
+        <text name="KeyInfo">
+            <de>Drücke B, um zu bieten </de>
+            <en>Press B to bid </en>
+        </text>
+
+        <text name="NewAuction">
+            <de>Neue Auktion: </de>
+            <en>New auction: </en>
+        </text>
+
+        <text name="EndsLess">
+            <de> endet in </de>
+            <en> ends in </en>
+        </text>
+
+        <text name="Hours">
+            <de> Stunden</de>
+            <en> hours</en>
+        </text>
+
+        <text name="AndWord">
+            <de> und </de>
+            <en> and </en>
+        </text>
+
+        <text name="Days">
+            <de> Tagen</de>
+            <en> days</en>
+        </text>
+
+        <text name="NoFieldsOnFarmland">
+            <de>einem Stück Land ohne Feld</de>
+            <en>farmland (no fields)</en>
+        </text>
+
+        <text name="EndInThirtyMinutes">
+            <de>Die Auktion endet in 30 Minuten!</de>
+            <en>The auction ends in 30 minutes!</en>
+        </text>
+
+        <text name="OutbidBy">
+            <de>Du wurdest überboten von </de>
+            <en>You have been outbid by </en>
+        </text>
+
+        <text name="BidCooldown">
+            <de>Bitte warte kurz vor dem nächsten Gebot.</de>
+            <en>Please wait before placing the next bid.</en>
+        </text>
+
+        <text name="BidCooldownShort">
+            <de>Nächstes Gebot in </de>
+            <en>Next bid in </en>
+        </text>
+
+        <text name="NotSold">
+            <de>Die Auktion endete ohne Käufer.</de>
+            <en>The auction ended without a buyer.</en>
+        </text>
+
+        <text name="SoftCloseExtended">
+            <de>Die Auktion wurde verlängert um </de>
+            <en>The auction was extended by </en>
+        </text>
+
+        <text name="Minutes">
+            <de> Minuten.</de>
+            <en> minutes.</en>
+        </text>
+
+        <text name="fa_highest_bidder">
+            <de>Höchstbietender</de>
+            <en>Highest bidder</en>
+        </text>
+
+        <text name="fa_history">
+            <de>Letzte Gebote</de>
+            <en>Recent bids</en>
+        </text>
+
+        <text name="fa_bid_title">
+            <de>Auktion</de>
+            <en>Auction</en>
+        </text>
+        <text name="fa_bid_steps">
+            <de>Gebotsschritte</de>
+            <en>Bid steps</en>
+        </text>
+
+        <text name="fa_standard_price">
+            <de>Standardpreis</de>
+            <en>Standard price</en>
+        </text>
+        <text name="fa_start_price">
+            <de>Startpreis</de>
+            <en>Starting price</en>
+        </text>
+        <text name="fa_current_bid">
+            <de>Aktuelles Gebot</de>
+            <en>Current bid</en>
+        </text>
+        <text name="fa_bid_increase">
+            <de>Erhöhung</de>
+            <en>Increase</en>
+        </text>
+        <text name="fa_new_bid">
+            <de>Neues Gebot</de>
+            <en>New bid</en>
+        </text>
+        <text name="fa_ends_in">
+            <de>Ende in</de>
+            <en>Ends in</en>
+        </text>
+		
+		<text name="ui_bid">
+            <en>Bid</en>
+            <de>Gebot</de>
+        </text>
+		
+		<text name="AuctionMaxPriceReached">
+            <de>Für diese Auktion sind keine weiteren Gebote mehr möglich.</de>
+            <en>No more bids are possible for this auction.</en>
+        </text>
+
+        <text name="AuctionBidInvalidFarm">
+            <de>Dein Hof kann bei dieser Auktion nicht bieten.</de>
+        <en>Your farm cannot bid on this auction.</en>
+</text>
+    </l10n>
+
+    <extraSourceFiles>
+        <sourceFile filename="scripts/Auction.lua"/>
+        <sourceFile filename="scripts/events/FarmlandAuctionBidEvent.lua"/>
+        <sourceFile filename="scripts/events/FarmlandAuctionSyncEvent.lua"/>
+        <sourceFile filename="scripts/events/FarmlandAuctionAdminCmdEvent.lua"/>
+        <sourceFile filename="scripts/gui/FarmlandAuctionBidDialog.lua"/>
+        <sourceFile filename="scripts/gui/InGameMenuMapFrameExtension.lua"/>
+<sourceFile filename="scripts/AuctionManager.lua"/>
+    </extraSourceFiles>
+</modDesc>
